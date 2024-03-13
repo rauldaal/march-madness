@@ -119,3 +119,11 @@
 |Season| Año|
 |TeamID| Identificador equipo|
 |ConfAbbrev| Abreviatura Conferencia|
+
+### MTeams.csv
+|Columns| Desctiption |
+|-|-|
+|TeamID|Identificador equipo|
+|TeamName|Nombre de equipo|
+|FirstD1Season|Primera vez en division1|
+|LastD1Season|Ultima vez en division 1|
