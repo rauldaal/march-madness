@@ -33,7 +33,7 @@ app.layout = html.Div([
     Input(component_id='season-dropdown', component_property='value'),
 )
 def update_graph(selected_team, selected_season):
-    points = df[(df['Season'] == selected_season) & (df['WTeamID'] == selected_team) | (df['LTeamID'] == selected_team)]["WScore"].tolist()
+    points = df[(df['Season'] == selected_season) & ((df['WTeamID'] == selected_team) | (df['LTeamID'] == selected_team))]["WScore"].tolist()
     data = [go.Scatter(x=list(range(len(points))), y=points, name=selected_team)]
     figure = go.Figure(data=data)
     figure.update_layout(title='Points Scored in winning game per season', xaxis_title='Game ID', yaxis_title='Points')
