@@ -112,3 +112,4 @@ class Bracket:
         for edges in self.edges.values():
             for edge in edges:
                 edge.plot(ax)
+        ax.axis("off")
