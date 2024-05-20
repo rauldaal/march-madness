@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import tqdm
 
 STREAK = {}
 STREAK_FUT = {}
@@ -138,7 +139,7 @@ def aggregate_data(df: pd.DataFrame):
     dict_away = {x: v for x, v in zip(away_columns, new_column_names)}
     final_df_columns = ['Season', 'DayNum', 'Home', 'Away', 'Result'] + home_columns + away_columns + ['HStreak', 'AStreak']
     final_df = pd.DataFrame(columns=final_df_columns)
-    for idx, row in df.iterrows():
+    for idx, row in tqdm.tqdm(df.iterrows()):
         home_home_last = df[(df['Season'] == row['Season']) & (df['DayNum'] < row['DayNum']) & (df['Home'] == row['Home'])]
         home_away_last = df[(df['Season'] == row['Season']) & (df['DayNum'] < row['DayNum']) & (df['Away'] == row['Home'])]
 
@@ -165,12 +166,11 @@ def aggregate_data(df: pd.DataFrame):
         away = list(away_last.median())
 
         final_df.loc[len(final_df)] = list(row[['Season', 'DayNum', 'Home', 'Away', 'Result']].values) + home + away + streak
-        print(f"{idx}/{len(df)}")
 
     return final_df
 
 
-def preprae_regular_season_csv(file_name: str):
+def prepare_regular_season_csv(file_name: str):
     """
     This function reads a CSV file and process the data for the model.
 

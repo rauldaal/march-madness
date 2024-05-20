@@ -1,0 +1,7 @@
+{
+    "ingestion": {
+        "active": false,
+        "existingFile": "../data/MMedianSeasonAggStreak_2.csv"
+    },
+    "regularSeason": "../data/MRegularSeasonDetailedResults.csv"
+}
