@@ -3,5 +3,6 @@
         "active": false,
         "existingFile": "../data/MMedianSeasonAggStreak_2.csv"
     },
-    "regularSeason": "../data/MRegularSeasonDetailedResults.csv"
+    "regularSeason": "../data/MRegularSeasonDetailedResults.csv",
+    "testData": "../data/MNCAATourneyDetailedResults.csv"
 }

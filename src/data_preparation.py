@@ -186,3 +186,60 @@ def prepare_regular_season_csv(file_name: str):
     df = prepare_data_for_aggregation(df=df)
     df = aggregate_data(df=df)
     return df
+
+
+def pregame_data(teamA, teamB, data, columns, season, balance=None):
+
+    home_columns = ['Home', 'HPF', 'HA2TR', 'HOffR', 'HAllR', 'HFGP', 'HPFR', 'HStreak']
+    away_columns = ['Away', 'APF', 'AA2TR', 'AOffR', 'AAllR', 'AFGP', 'APFR', 'AStreak']
+    # Cogemos el ultimmo partido de ambos equipos
+    teamA_data = data[(data['Season'] == season) & ((data['Home'] == teamA) | (data['Away'] == teamA))].tail(1)
+    teamB_data = data[(data['Season'] == season) & ((data['Home'] == teamB) | (data['Away'] == teamB))].tail(1)
+
+    if teamA_data.isna().sum().sum() != 0:
+        print("PARA")
+    if teamB_data.isna().sum().sum() != 0:
+        print("PARA")
+
+    if teamA_data['Home'].values[0] == teamA:
+        teamA_data = teamA_data[home_columns]
+    else:
+        teamA_data = teamA_data[away_columns]
+        renamed_a2h_columns = {x: v for x, v in zip(away_columns, home_columns)}
+        teamA_data = teamA_data.rename(columns=renamed_a2h_columns)
+
+    if teamB_data['Home'].values[0] == teamB:
+        teamB_data = teamB_data[home_columns]
+        renamed_h2a_columns = {x: v for x, v in zip(home_columns, away_columns)}
+        teamB_data = teamB_data.rename(columns=renamed_h2a_columns)
+    else:
+        teamB_data = teamB_data[away_columns]
+    teamA_data.reset_index(inplace=True, drop=True)
+    teamB_data.reset_index(inplace=True, drop=True)
+    game = pd.concat([teamA_data, teamB_data], axis='columns')
+    game['Season'] = season
+    game['DayNum'] = 137
+    game['Result'] = balance
+
+    return game[columns]
+
+
+def prepare_test_data(file_name, train_df):
+    df = pd.read_csv(file_name)
+    final_df = pd.DataFrame(columns=train_df.columns)
+    for idx, row in df.iterrows():
+        if idx%2 == 0:
+            teamA = row['WTeamID']
+            teamB = row['LTeamID']
+            balance = 1
+        else:
+            teamA = row['LTeamID']
+            teamB = row['WTeamID']
+            balance = 0
+        game = pregame_data(teamA=teamA, teamB=teamB, data=train_df, columns=train_df.columns, balance=balance, season=row['Season'])
+        if game.isna().sum().sum() != 0:
+            print("Stop")
+        final_df.loc[len(final_df)] = game.iloc[0]
+    
+    return final_df
+

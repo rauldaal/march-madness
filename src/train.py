@@ -5,19 +5,23 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_s
 import matplotlib.pyplot as plt
 
 
-def split_data(df: pd.DataFrame):
+def split_data(train_df: pd.DataFrame, test_df:pd.DataFrame):
     """
     Given a DataFrame, it creates the X and Y frames, and splits the Data.
     """
-    df.dropna(inplace=True)
-    X = df.drop(columns=['Result'])
-    Y = df['Result']
-    x_train, x_test, y_train, y_test = train_test_split(X, Y, train_size=0.2, random_state=42)
+    train_df.dropna(inplace=True)
+    x_train = train_df.drop(columns=['Result'])
+    y_train = train_df['Result']
+
+    test_df.dropna(inplace=True)
+    x_test = test_df.drop(columns=['Result'])
+    y_test = test_df['Result']
+
     return x_train, y_train, x_test, y_test
 
 
-def train(df: pd.DataFrame, model):
-    x_train, y_train, x_test, y_test = split_data(df=df)
+def train_test(train_df: pd.DataFrame, model, test_df: pd.DataFrame):
+    x_train, y_train, x_test, y_test = split_data(train_df=train_df, test_df=test_df)
     # Train Model
     model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
