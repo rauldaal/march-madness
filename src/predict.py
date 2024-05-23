@@ -1,5 +1,10 @@
 import pandas as pd
 
+REGION_MATCH_UP = {
+    "W": "X",
+    "Y": "Z"
+}
+
 
 def compute_ncaa_bracket(seed: pd.DataFrame):
     seed = seed[seed['Tournament'] == 'M']
@@ -139,8 +144,13 @@ def add_teamsName_2_bracket_output(bracke_df, teams):
     return merge
 
 
-def predict_final_four():
-    pass
+def predict_final_four(final_four_data, model):
+    for k,v in REGION_MATCH_UP.items():
+        winner_k, game_id_k = final_four_data[final_four_data['Conference'] == k][["Winner", "Game"]].values[0]
+        winner_v, game_id_v = final_four_data[final_four_data['Conference'] == k][["Winner", "Game"]].values[0]
+        final_four_data.loc[len(final_four_data)] = [f"{k}_{v}", f"{game_id_k}_{game_id_v}", winner_k, winner_v, None]
+
+
 
 
 def predict(seed_file: str, season_data: pd.DataFrame, model):
