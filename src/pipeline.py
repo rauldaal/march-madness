@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from data_preparation import prepare_regular_season_csv, prepare_test_data
-from train import train_test
+from train import train_test, train
 
 
 def pipeline(config):
@@ -14,8 +14,8 @@ def pipeline(config):
         df = pd.read_csv(config.get("ingestion").get("existingFile"))
 
     test_df = prepare_test_data(config.get("testData"), train_df=df)
-    model = RandomForestClassifier(n_estimators=100, max_features="sqrt")
-    train_test(train_df=df, test_df=test_df, model=model)
+    # train_test(train_df=df, test_df=test_df)
+    result = train(train_df=df, test_df=test_df)
 
 
 if __name__ == "__main__":

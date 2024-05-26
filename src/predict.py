@@ -144,13 +144,43 @@ def add_teamsName_2_bracket_output(bracke_df, teams):
     return merge
 
 
-def predict_final_four(final_four_data, model):
+def predict_final_four(final_four_data, season_data, model):
+    final_four_data = final_four_data.reset_index()
+    final_four_data.drop(columns=['index'], inplace=True)
+    final_four_bracket = pd.DataFrame(columns=list(final_four_data.columns))
+    new_conf = []
     for k,v in REGION_MATCH_UP.items():
+        new_conf.append(f"{k}_{v}")
         winner_k, game_id_k = final_four_data[final_four_data['Conference'] == k][["Winner", "Game"]].values[0]
-        winner_v, game_id_v = final_four_data[final_four_data['Conference'] == k][["Winner", "Game"]].values[0]
-        final_four_data.loc[len(final_four_data)] = [f"{k}_{v}", f"{game_id_k}_{game_id_v}", winner_k, winner_v, None]
+        winner_v, game_id_v = final_four_data[final_four_data['Conference'] == v][["Winner", "Game"]].values[0]
+        print(final_four_bracket.columns)
+        final_four_bracket.loc[len(final_four_bracket)] = [f"{k}_{v}", f"{game_id_k}_{game_id_v}", winner_k, winner_v, None]
+    wx_game = final_four_bracket[final_four_bracket["Conference"] == new_conf[0]]
+    yz_game = final_four_bracket[final_four_bracket["Conference"] == new_conf[1]]
 
+    final_four_bracket.loc[len(final_four_bracket)] = ["_".join(new_conf), f"{wx_game['Game'].values[0]}_{yz_game['Game'].values[0]}", wx_game['Game'].values[0], yz_game['Game'].values[0], None]
 
+    for i in range(len(REGION_MATCH_UP)):
+        game = final_four_bracket.loc[i, :]
+        teamA, teamB, game_name, conference = game['TeamA'], game['TeamB'], game['Game'], game['Conference']
+        print(f"Game: - {game_name}     Teams: {teamA} vs {teamB}")
+        game_data = pregame_data(teamA=teamA, teamB=teamB, data=season_data, columns=season_data.columns)
+        winner = generate_prediction(game_data=game_data, model=model)
+        column = "TeamA" if i == 0 else "TeamB"
+        final_four_bracket.loc[final_four_bracket["Conference"] == "_".join(new_conf), column] = winner
+
+        final_four_bracket.loc[final_four_bracket["Conference"] == conference, "Winner"] = winner
+
+    game = final_four_bracket.loc[len(final_four_bracket)-1, :]
+    teamA, teamB, game_name, conference = game['TeamA'], game['TeamB'], game['Game'], game['Conference']
+    print(f"Game: - {game_name}     Teams: {teamA} vs {teamB}")
+    game_data = pregame_data(teamA=teamA, teamB=teamB, data=season_data, columns=season_data.columns)
+    winner = generate_prediction(game_data=game_data, model=model)
+    final_four_bracket.loc[final_four_bracket["Conference"] == "_".join(new_conf), "Winner"] = winner
+    
+    
+    
+    return final_four_bracket
 
 
 def predict(seed_file: str, season_data: pd.DataFrame, model):
