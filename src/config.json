@@ -1,8 +1,23 @@
 {
-    "ingestion": {
+    "male": {
         "active": false,
-        "existingFile": "../data/MMedianSeasonAggStreak_2.csv"
+        "ingestion": {
+            "active": false,
+            "existingFile": "../data/MMedianSeasonAggStreak_2.csv",
+            "outputCSV": "../ata/MMedianSeasonAggStreak_2.csv"
+        },
+        "regularSeason": "../data/MRegularSeasonDetailedResults.csv",
+        "testData": "../data/MNCAATourneyDetailedResults.csv",
+        "model": "LogisticRegression"
     },
-    "regularSeason": "../data/MRegularSeasonDetailedResults.csv",
-    "testData": "../data/MNCAATourneyDetailedResults.csv"
+    "female": {
+        "active": true,
+        "ingestion": {
+            "active": true,
+            "outputCSV": "../data/WMedianSeasonAggStreak_2.csv"
+        },
+        "regularSeason": "../data/WRegularSeasonDetailedResults.csv",
+        "testData": "../data/WNCAATourneyDetailedResults.csv",
+        "model": "LogisticRegression"
+    }
 }

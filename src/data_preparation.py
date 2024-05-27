@@ -228,7 +228,7 @@ def prepare_test_data(file_name, train_df):
     df = pd.read_csv(file_name)
     final_df = pd.DataFrame(columns=train_df.columns)
     for idx, row in df.iterrows():
-        if idx%2 == 0:
+        if idx % 2 == 0:
             teamA = row['WTeamID']
             teamB = row['LTeamID']
             balance = 1
@@ -240,6 +240,5 @@ def prepare_test_data(file_name, train_df):
         if game.isna().sum().sum() != 0:
             print("Stop")
         final_df.loc[len(final_df)] = game.iloc[0]
-    
-    return final_df
 
+    return final_df

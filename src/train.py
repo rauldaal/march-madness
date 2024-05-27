@@ -35,19 +35,19 @@ def evaluate_model(model, x_train, y_train, x_test, y_test):
     cm_train = confusion_matrix(y_true=y_train, y_pred=y_train_pred)
 
     cm_test = confusion_matrix(y_true=y_test, y_pred=y_pred)
-    
+
     # Compute Train Metrics
-    accuracy_train = accuracy_score(y_pred=y_pred, y_true=y_test)
+    accuracy_train = accuracy_score(y_pred=y_train_pred, y_true=y_train)
     # Recall
-    recall_train = recall_score(y_test, y_pred)
+    recall_train = recall_score(y_train, y_train_pred)
     # Puntuación F1
-    f1_train = f1_score(y_test, y_pred)
+    f1_train = f1_score(y_train, y_train_pred)
     # Curva ROC (AUC)
-    fpr_train, tpr_train, thresholds_train = roc_curve(y_test, y_pred)
-    auc_train = roc_auc_score(y_test, y_pred)
+    fpr_train, tpr_train, thresholds_train = roc_curve(y_train, y_train_pred)
+    auc_train = roc_auc_score(y_train, y_train_pred)
     # Pérdida logarítmica
-    loss_train = log_loss(y_test, y_pred)
-    
+    loss_train = log_loss(y_train, y_train_pred)
+
     # Compute Test Metrics
     accuracy_test = accuracy_score(y_pred=y_pred, y_true=y_test)
     # Recall
@@ -61,7 +61,7 @@ def evaluate_model(model, x_train, y_train, x_test, y_test):
     loss_test = log_loss(y_test, y_pred)
 
     return ([accuracy_train, recall_train, f1_train, [fpr_train, tpr_train, thresholds_train], auc_train, loss_train, cm_train],
-        [accuracy_test, recall_test, f1_test, [fpr_test, tpr_test, thresholds_test], auc_test, loss_test, cm_test])
+            [accuracy_test, recall_test, f1_test, [fpr_test, tpr_test, thresholds_test], auc_test, loss_test, cm_test])
 
 
 def custom_train(train_df: pd.DataFrame, test_df: pd.DataFrame, model_instance, params):
@@ -84,7 +84,8 @@ def custom_train(train_df: pd.DataFrame, test_df: pd.DataFrame, model_instance, 
 
     return best_acc, best_params, best_all_results
 
-def create_comparision_graphic(results):
+
+def create_comparision_graphic(results, type):
     categorias = ['Accuracy Train', 'Recall Train', 'F1 Score Train', 'Accuracy Test', 'Recall Test', 'F1 Score Test']
     colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
 
@@ -92,7 +93,7 @@ def create_comparision_graphic(results):
     fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
     for i, (model, values) in enumerate(results.items()):
         angulos = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
-        grpah_metrics = [values[2][0][0], values[2][0][1], values[2][0][2],values[2][1][0], values[2][1][1], values[2][1][2]]
+        grpah_metrics = [values[2][0][0], values[2][0][1], values[2][0][2], values[2][1][0], values[2][1][1], values[2][1][2]]
         grpah_metrics += grpah_metrics[:1]
         angulos += angulos[:1]
         ax.fill(angulos, grpah_metrics, color=colors[i], alpha=0.25)
@@ -102,20 +103,19 @@ def create_comparision_graphic(results):
         ax.set_rscale('linear')
         ax.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
     plt.plot()
-    plt.savefig(f"plots/spider_graph.png")
+    plt.savefig(f"plots/{type}/_spider_graph.png")
     for i, (model, values) in enumerate(results.items()):
         ConfusionMatrixDisplay(confusion_matrix=values[2][0][-1]).plot()
         plt.plot()
-        plt.savefig(f"plots/cm_{model}_train.png")
+        plt.savefig(f"plots/{type}/cm_{model}_train.png")
         ConfusionMatrixDisplay(confusion_matrix=values[2][1][-1]).plot()
         plt.plot()
-        plt.savefig(f"plots/cm_{model}_test.png")
+        plt.savefig(f"plots/{type}/cm_{model}_test.png")
     plt.close('all')
     return
 
 
-
-def train(train_df: pd.DataFrame, test_df: pd.DataFrame):
+def train(train_df: pd.DataFrame, test_df: pd.DataFrame, type:str, best_model=None):
     modelos = [
         # ('SVC', SVC()),
         ('XGBoost', XGBClassifier),
@@ -127,7 +127,7 @@ def train(train_df: pd.DataFrame, test_df: pd.DataFrame):
         # {'C': [0.1, 1, 10, 100], 'kernel': ['linear', 'rbf']},
         {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 0.2, 0.3]},
         {'n_estimators': [10, 50, 100, 200], 'max_features': ['sqrt', 'log2']},
-        {'C': [0.1, 1, 10, 100, 1_000, 10_000, 100_000], 'penalty': ['l1', 'l2'], "max_iter": [100, 1_000, 10_000]},
+        {'C': [0.1, 1, 10, 100, 1_000, 10_000, 100_000], 'penalty': ['l1', 'l2'], "max_iter": [100, 1_000, 10_000], "n_jobs": [-1]},
         {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 0.2, 0.3]}
     ]
 
@@ -136,11 +136,25 @@ def train(train_df: pd.DataFrame, test_df: pd.DataFrame):
     for m, h in zip(modelos, hiperparametros):
         acc, params, all_results = custom_train(train_df=train_df, test_df=test_df, model_instance=m[1], params=h)
         result[m[0]] = (acc, params, all_results)
-    
-    create_comparision_graphic(results=result)    
 
     print(result)
-    return result
+    create_comparision_graphic(results=result, type=type)
+    model_instance = None
+    for name, instance in modelos:
+        if name == best_model:
+            model_instance = instance
+    params = result.get(best_model)[1]
+
+    model = train_with_params(model=model_instance, params=params, train_df=train_df, test_df=test_df)
+    return model
+
+
+def train_with_params(model, params, train_df, test_df):
+    x_train, y_train, x_test, y_test = split_data(train_df=train_df, test_df=test_df)
+    model = model(**params)
+    model.fit(x_train, y_train)
+    pickle.dump(model, open("model/model.sav", "wb"))
+    return model
 
 
 def get_grid(params):
@@ -157,13 +171,11 @@ def get_grid(params):
     return result
 
 
-
-
 def train_test(train_df: pd.DataFrame, test_df: pd.DataFrame):
     x_train, y_train, x_test, y_test = split_data(train_df=train_df, test_df=test_df)
     # Train Model
     model = find_best_model(x_train=x_train, x_test=x_test, y_train=y_train, y_test=y_test)
-    
+
     model.fit(x_train, y_train)
     y_train_pred = model.predict(x_train)
     y_pred = model.predict(x_test)

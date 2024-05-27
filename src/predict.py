@@ -149,7 +149,7 @@ def predict_final_four(final_four_data, season_data, model):
     final_four_data.drop(columns=['index'], inplace=True)
     final_four_bracket = pd.DataFrame(columns=list(final_four_data.columns))
     new_conf = []
-    for k,v in REGION_MATCH_UP.items():
+    for k, v in REGION_MATCH_UP.items():
         new_conf.append(f"{k}_{v}")
         winner_k, game_id_k = final_four_data[final_four_data['Conference'] == k][["Winner", "Game"]].values[0]
         winner_v, game_id_v = final_four_data[final_four_data['Conference'] == v][["Winner", "Game"]].values[0]
@@ -171,15 +171,13 @@ def predict_final_four(final_four_data, season_data, model):
 
         final_four_bracket.loc[final_four_bracket["Conference"] == conference, "Winner"] = winner
 
-    game = final_four_bracket.loc[len(final_four_bracket)-1, :]
+    game = final_four_bracket.loc[len(final_four_bracket) - 1, :]
     teamA, teamB, game_name, conference = game['TeamA'], game['TeamB'], game['Game'], game['Conference']
     print(f"Game: - {game_name}     Teams: {teamA} vs {teamB}")
     game_data = pregame_data(teamA=teamA, teamB=teamB, data=season_data, columns=season_data.columns)
     winner = generate_prediction(game_data=game_data, model=model)
     final_four_bracket.loc[final_four_bracket["Conference"] == "_".join(new_conf), "Winner"] = winner
-    
-    
-    
+
     return final_four_bracket
 
 

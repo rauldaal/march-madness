@@ -7,15 +7,28 @@ from train import train_test, train
 
 
 def pipeline(config):
-    if config.get("ingestion").get("active"):
-        df = prepare_regular_season_csv(config.get("regularSeason"))
-        df.to_csv("../data/MMedianSeasonAggStreak_2.csv", index=False)
-    else:
-        df = pd.read_csv(config.get("ingestion").get("existingFile"))
+    if config.get("male").get("active"):
+        if config.get("male", None).get("ingestion").get("active"):
+            df = prepare_regular_season_csv(config.get("male", None).get("regularSeason"))
+            df.to_csv(config.get("male").get("ingestion").get("outputCSV"), index=False)
+        else:
+            df = pd.read_csv(config.get("male").get("ingestion").get("existingFile"))
 
-    test_df = prepare_test_data(config.get("testData"), train_df=df)
-    # train_test(train_df=df, test_df=test_df)
-    result = train(train_df=df, test_df=test_df)
+        test_df = prepare_test_data(config.get("male").get("testData"), train_df=df)
+        # train_test(train_df=df, test_df=test_df)
+        model = train(train_df=df, test_df=test_df, best_model=config.get("male").get("model"), type="male")
+
+    if config.get("female").get("active"):
+        if config.get("female", None).get("ingestion").get("active"):
+            df = prepare_regular_season_csv(config.get("female", None).get("regularSeason"))
+            df.to_csv(config.get("female").get("ingestion").get("outputCSV"), index=False)
+        else:
+            df = pd.read_csv(config.get("female").get("ingestion").get("existingFile"))
+
+        test_df = prepare_test_data(config.get("female").get("testData"), train_df=df)
+        # train_test(train_df=df, test_df=test_df)
+        model = train(train_df=df, test_df=test_df, best_model=config.get("female").get("model"), type="female")
+
 
 
 if __name__ == "__main__":
