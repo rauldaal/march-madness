@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from data_preparation import prepare_regular_season_csv, prepare_test_data
 from train import train_test, train
-
+from predict import predict
 
 def pipeline(config):
     if config.get("male").get("active"):
@@ -28,6 +28,14 @@ def pipeline(config):
         test_df = prepare_test_data(config.get("female").get("testData"), train_df=df)
         # train_test(train_df=df, test_df=test_df)
         model = train(train_df=df, test_df=test_df, best_model=config.get("female").get("model"), type="female")
+        predict(
+            seed_file=config.get("seedFile"),
+            teams_name=config.get("female").get("teamsName"),
+            season_data=df,
+            model=model,
+            type="female"
+        )
+
 
 
 

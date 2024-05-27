@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 REGION_MATCH_UP = {
     "W": "X",
@@ -6,8 +7,9 @@ REGION_MATCH_UP = {
 }
 
 
-def compute_ncaa_bracket(seed: pd.DataFrame):
-    seed = seed[seed['Tournament'] == 'M']
+def compute_ncaa_bracket(seed: pd.DataFrame, type):
+    gender = "M" if type == "male" else "W"
+    seed = seed[seed['Tournament'] == gender]
     seed['Conference'] = seed['Seed'].str.slice(0, 1)
     seed['Position'] = seed['Seed'].str.slice(-2).astype(int)
 
@@ -134,10 +136,18 @@ def predict_ncaa_bracket(bracket, season_data, model):
 def add_teamsName_2_bracket_output(bracke_df, teams):
     merge = bracke_df.merge(teams, left_on='TeamA', right_on='TeamID')
     merge["TeamAName"] = merge["TeamName"]
-    merge.drop(columns=["TeamID", "TeamName", "FirstD1Season", "LastD1Season"], inplace=True)
+    merge.drop(columns=["TeamID", "TeamName"], inplace=True)
+    try:
+        merge.drop(columns=["FirstD1Season", "LastD1Season"], inplace=True)
+    except:
+        pass
     merge = merge.merge(teams, left_on='TeamB', right_on='TeamID')
     merge["TeamBName"] = merge["TeamName"]
-    merge.drop(columns=["TeamID", "TeamName", "FirstD1Season", "LastD1Season"], inplace=True)
+    merge.drop(columns=["TeamID", "TeamName"], inplace=True)
+    try:
+        merge.drop(columns=["FirstD1Season", "LastD1Season"], inplace=True)
+    except:
+        pass
     merge['level'] = merge['Game'].str.count('_')
     merge['level'] = merge['level'].apply(lambda x: list(merge['level'].unique()).index(x))
 
@@ -178,15 +188,22 @@ def predict_final_four(final_four_data, season_data, model):
     winner = generate_prediction(game_data=game_data, model=model)
     final_four_bracket.loc[final_four_bracket["Conference"] == "_".join(new_conf), "Winner"] = winner
 
+    final_four_bracket['level'] = np.where(len(final_four_bracket["Conference"]) < 4, 4, 5)
+
     return final_four_bracket
 
 
-def predict(seed_file: str, season_data: pd.DataFrame, model):
+def predict(seed_file: str, teams_name: str, season_data: pd.DataFrame, model, type: str):
     seed = pd.read_csv(seed_file)
-    bracket = compute_ncaa_bracket(seed)
+    bracket = compute_ncaa_bracket(seed=seed, type=type)
     solved_bracket = predict_ncaa_bracket(bracket=bracket, season_data=season_data, model=model)
     final_four = solved_bracket.tail(4)
-    teams = pd.read_csv('data/MTeams.csv')
+    teams = pd.read_csv(teams_name)
+    final_four_bracket = predict_final_four(final_four_data=final_four, season_data=season_data, model=model)
+    final_four_teams = add_teamsName_2_bracket_output(final_four_bracket, teams)
+    region_backet_team = add_teamsName_2_bracket_output(solved_bracket, teams)
+    complete = pd.concat([region_backet_team, final_four_teams])
 
-    merge = add_teamsName_2_bracket_output(solved_bracket, teams)
-    return merge
+    complete.to_csv(f"predictions/{type}.csv", index=False)
+
+    return complete

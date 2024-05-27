@@ -18,6 +18,8 @@
         },
         "regularSeason": "../data/WRegularSeasonDetailedResults.csv",
         "testData": "../data/WNCAATourneyDetailedResults.csv",
-        "model": "LogisticRegression"
-    }
+        "model": "LogisticRegression",
+        "teamsName": "../data/WTeams.csv"
+    },
+    "seedFile": "../data/2024_tourney_seeds.csv"
 }
