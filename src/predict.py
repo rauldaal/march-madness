@@ -204,6 +204,6 @@ def predict(seed_file: str, teams_name: str, season_data: pd.DataFrame, model, t
     region_backet_team = add_teamsName_2_bracket_output(solved_bracket, teams)
     complete = pd.concat([region_backet_team, final_four_teams])
 
-    complete.to_csv(f"predictions/{type}.csv", index=False)
+    complete.to_csv(f"predictions/2024_{type}.csv", index=False)
 
     return complete

@@ -8,12 +8,15 @@
         },
         "regularSeason": "../data/MRegularSeasonDetailedResults.csv",
         "testData": "../data/MNCAATourneyDetailedResults.csv",
-        "model": "LogisticRegression"
+        "model": "LogisticRegression",
+        "teamsName": "../data/MTeams.csv"
+
     },
     "female": {
         "active": true,
         "ingestion": {
-            "active": true,
+            "active": false,
+            "existingFile": "../data/WMedianSeasonAggStreak_2.csv",
             "outputCSV": "../data/WMedianSeasonAggStreak_2.csv"
         },
         "regularSeason": "../data/WRegularSeasonDetailedResults.csv",

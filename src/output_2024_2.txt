@@ -1,0 +1,356 @@
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.01, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=50, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 0/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.1, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=50, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 1/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=50, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 2/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=50, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 3/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.01, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=100, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 4/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.1, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=100, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 5/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=100, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 6/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=100, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 7/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.01, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 8/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.1, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 9/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 10/12
+Evaluando Modelo XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...): 11/12
+Evaluando Modelo RandomForestClassifier(n_estimators=10): 0/8
+Evaluando Modelo RandomForestClassifier(max_features='log2', n_estimators=10): 1/8
+Evaluando Modelo RandomForestClassifier(n_estimators=50): 2/8
+Evaluando Modelo RandomForestClassifier(max_features='log2', n_estimators=50): 3/8
+Evaluando Modelo RandomForestClassifier(): 4/8
+Evaluando Modelo RandomForestClassifier(max_features='log2'): 5/8
+Evaluando Modelo RandomForestClassifier(n_estimators=200): 6/8
+Evaluando Modelo RandomForestClassifier(max_features='log2', n_estimators=200): 7/8
+Evaluando Modelo LogisticRegression(C=0.1, n_jobs=-1, penalty='l1'): 0/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=0.1, max_iter=1000, n_jobs=-1, penalty='l1'): 1/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=0.1, max_iter=10000, n_jobs=-1, penalty='l1'): 2/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=0.1, n_jobs=-1): 3/42
+Evaluando Modelo LogisticRegression(C=0.1, max_iter=1000, n_jobs=-1): 4/42
+Evaluando Modelo LogisticRegression(C=0.1, max_iter=10000, n_jobs=-1): 5/42
+Evaluando Modelo LogisticRegression(C=1, n_jobs=-1, penalty='l1'): 6/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1, max_iter=1000, n_jobs=-1, penalty='l1'): 7/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1, max_iter=10000, n_jobs=-1, penalty='l1'): 8/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1, n_jobs=-1): 9/42
+Evaluando Modelo LogisticRegression(C=1, max_iter=1000, n_jobs=-1): 10/42
+Evaluando Modelo LogisticRegression(C=1, max_iter=10000, n_jobs=-1): 11/42
+Evaluando Modelo LogisticRegression(C=10, n_jobs=-1, penalty='l1'): 12/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10, max_iter=1000, n_jobs=-1, penalty='l1'): 13/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10, max_iter=10000, n_jobs=-1, penalty='l1'): 14/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10, n_jobs=-1): 15/42
+Evaluando Modelo LogisticRegression(C=10, max_iter=1000, n_jobs=-1): 16/42
+Evaluando Modelo LogisticRegression(C=10, max_iter=10000, n_jobs=-1): 17/42
+Evaluando Modelo LogisticRegression(C=100, n_jobs=-1, penalty='l1'): 18/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100, max_iter=1000, n_jobs=-1, penalty='l1'): 19/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100, max_iter=10000, n_jobs=-1, penalty='l1'): 20/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100, n_jobs=-1): 21/42
+Evaluando Modelo LogisticRegression(C=100, max_iter=1000, n_jobs=-1): 22/42
+Evaluando Modelo LogisticRegression(C=100, max_iter=10000, n_jobs=-1): 23/42
+Evaluando Modelo LogisticRegression(C=1000, n_jobs=-1, penalty='l1'): 24/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1000, max_iter=1000, n_jobs=-1, penalty='l1'): 25/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1000, max_iter=10000, n_jobs=-1, penalty='l1'): 26/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=1000, n_jobs=-1): 27/42
+Evaluando Modelo LogisticRegression(C=1000, max_iter=1000, n_jobs=-1): 28/42
+Evaluando Modelo LogisticRegression(C=1000, max_iter=10000, n_jobs=-1): 29/42
+Evaluando Modelo LogisticRegression(C=10000, n_jobs=-1, penalty='l1'): 30/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10000, max_iter=1000, n_jobs=-1, penalty='l1'): 31/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10000, max_iter=10000, n_jobs=-1, penalty='l1'): 32/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=10000, n_jobs=-1): 33/42
+Evaluando Modelo LogisticRegression(C=10000, max_iter=1000, n_jobs=-1): 34/42
+Evaluando Modelo LogisticRegression(C=10000, max_iter=10000, n_jobs=-1): 35/42
+Evaluando Modelo LogisticRegression(C=100000, n_jobs=-1, penalty='l1'): 36/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100000, max_iter=1000, n_jobs=-1, penalty='l1'): 37/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100000, max_iter=10000, n_jobs=-1, penalty='l1'): 38/42
+Solver lbfgs supports only 'l2' or None penalties, got l1 penalty.
+Evaluando Modelo LogisticRegression(C=100000, n_jobs=-1): 39/42
+Evaluando Modelo LogisticRegression(C=100000, max_iter=1000, n_jobs=-1): 40/42
+Evaluando Modelo LogisticRegression(C=100000, max_iter=10000, n_jobs=-1): 41/42
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.01, n_estimators=50): 0/12
+Evaluando Modelo GradientBoostingClassifier(n_estimators=50): 1/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.2, n_estimators=50): 2/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.3, n_estimators=50): 3/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.01): 4/12
+Evaluando Modelo GradientBoostingClassifier(): 5/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.2): 6/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.3): 7/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.01, n_estimators=200): 8/12
+Evaluando Modelo GradientBoostingClassifier(n_estimators=200): 9/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.2, n_estimators=200): 10/12
+Evaluando Modelo GradientBoostingClassifier(learning_rate=0.3, n_estimators=200): 11/12
+Evaluando Modelo GaussianNB(var_smoothing=1e-10): 0/5
+Evaluando Modelo GaussianNB(): 1/5
+Evaluando Modelo GaussianNB(var_smoothing=1e-08): 2/5
+Evaluando Modelo GaussianNB(var_smoothing=1e-05): 3/5
+Evaluando Modelo GaussianNB(var_smoothing=0.001): 4/5
+{'XGBoost': (0.5949214026602176, {'n_estimators': 50, 'learning_rate': 0.01}, ([0.6906972065754684, 0.891407333734656, 0.7598755033968831, [array([0.        , 0.55364027, 1.        ]), array([0.        , 0.89140733, 1.        ]), array([inf,  1.,  0.])], 0.6688835298592031, 11.148402678479517, array([[14009, 17376],
+       [ 4149, 34058]])], [0.5949214026602176, 0.30193236714975846, 0.42735042735042733, [array([0.        , 0.11138015, 1.        ]), array([0.        , 0.30193237, 1.        ]), array([inf,  1.,  0.])], 0.595276110935654, 14.600512557864867, array([[367,  46],
+       [289, 125]])])), 'RandomForest': (0.5888754534461911, {'n_estimators': 10, 'max_features': 'log2'}, ([0.9875129325209794, 0.983275316041563, 0.9885665416748898, [array([0.        , 0.00732834, 1.        ]), array([0.        , 0.98327532, 1.        ]), array([inf,  1.,  0.])], 0.9879734872385607, 0.4500795320603348, array([[31155,   230],
+       [  639, 37568]])], [0.5888754534461911, 0.27053140096618356, 0.3971631205673759, [array([0.        , 0.09200969, 1.        ]), array([0.       , 0.2705314, 1.       ]), array([inf,  1.,  0.])], 0.5892608578680796, 14.818430655743446, array([[375,  38],
+       [302, 112]])])), 'LogisticRegression': (0.6469165659008465, {'C': 10, 'penalty': 'l2', 'max_iter': 10000, 'n_jobs': -1}, ([0.6997499712610645, 0.7649121888659146, 0.7366563740626378, [array([0.        , 0.37957623, 1.        ]), array([0.        , 0.76491219, 1.        ]), array([inf,  1.,  0.])], 0.6926679790912336, 10.822107965938656, array([[19472, 11913],
+       [ 8982, 29225]])], [0.6469165659008465, 0.5700483091787439, 0.6178010471204188, [array([0.        , 0.27602906, 1.        ]), array([0.        , 0.57004831, 1.        ]), array([inf,  1.,  0.])], 0.6470096267443356, 12.726416916109079, array([[299, 114],
+       [178, 236]])])), 'GradientBoosting': (0.5864570737605804, {'n_estimators': 100, 'learning_rate': 0.1}, ([0.7168352684216577, 0.7743868924542623, 0.7501774847870183, [array([0.        , 0.35322606, 1.        ]), array([0.        , 0.77438689, 1.        ]), array([inf,  1.,  0.])], 0.7105804145240882, 10.206291437032167, array([[20299, 11086],
+       [ 8620, 29587]])], [0.5864570737605804, 0.21739130434782608, 0.3448275862068966, [array([0.        , 0.04358354, 1.        ]), array([0.       , 0.2173913, 1.       ]), array([inf,  1.,  0.])], 0.5869038846194337, 14.905597894894877, array([[395,  18],
+       [324,  90]])])), 'GaussianNB': (0.6493349455864571, {'var_smoothing': 1e-08}, ([0.6828802161167951, 0.7419582798963541, 0.7198120992826763, [array([0.        , 0.38903935, 1.        ]), array([0.        , 0.74195828, 1.        ]), array([inf,  1.,  0.])], 0.6764594649441942, 11.430155573117979, array([[19175, 12210],
+       [ 9859, 28348]])], [0.6493349455864571, 0.4927536231884058, 0.5845272206303725, [array([0.       , 0.1937046, 1.       ]), array([0.        , 0.49275362, 1.        ]), array([inf,  1.,  0.])], 0.6495245113520721, 12.639249676957647, array([[333,  80],
+       [210, 204]])]))}
+Game: - 0116     Teams: 3376 vs 3342
+Game: - 0116     Teams: 3376 vs 3342  --> Winner  3376.0
+Game: - 0809     Teams: 3314 vs 3277
+Game: - 0809     Teams: 3314 vs 3277  --> Winner  3277.0
+Game: - 0512     Teams: 3328 vs 3195
+Game: - 0512     Teams: 3328 vs 3195  --> Winner  3195.0
+Game: - 0413     Teams: 3231 vs 3193
+Game: - 0413     Teams: 3231 vs 3193  --> Winner  3193.0
+Game: - 0611     Teams: 3304 vs 3401
+Game: - 0611     Teams: 3304 vs 3401  --> Winner  3401.0
+Game: - 0314     Teams: 3333 vs 3186
+Game: - 0314     Teams: 3333 vs 3186  --> Winner  3333.0
+Game: - 0710     Teams: 3279 vs 3266
+Game: - 0710     Teams: 3279 vs 3266  --> Winner  3266.0
+Game: - 0215     Teams: 3323 vs 3245
+Game: - 0215     Teams: 3323 vs 3245  --> Winner  3323.0
+Game: - 0116     Teams: 3400 vs 3180
+Game: - 0116     Teams: 3400 vs 3180  --> Winner  3400.0
+Game: - 0809     Teams: 3104 vs 3199
+Game: - 0809     Teams: 3104 vs 3199  --> Winner  3199.0
+Game: - 0512     Teams: 3428 vs 3355
+Game: - 0512     Teams: 3428 vs 3355  --> Winner  3355.0
+Game: - 0413     Teams: 3211 vs 3414
+Game: - 0413     Teams: 3211 vs 3414  --> Winner  3211.0
+Game: - 0611     Teams: 3397 vs 3453
+Game: - 0611     Teams: 3397 vs 3453  --> Winner  3453.0
+Game: - 0314     Teams: 3301 vs 3151
+Game: - 0314     Teams: 3301 vs 3151  --> Winner  3151.0
+Game: - 0710     Teams: 3235 vs 3268
+Game: - 0710     Teams: 3235 vs 3268  --> Winner  3268.0
+Game: - 0215     Teams: 3390 vs 3313
+Game: - 0215     Teams: 3390 vs 3313  --> Winner  3390.0
+Game: - 0116     Teams: 3234 vs 3221
+Game: - 0116     Teams: 3234 vs 3221  --> Winner  3234.0
+Game: - 0809     Teams: 3452 vs 3343
+Game: - 0809     Teams: 3452 vs 3343  --> Winner  3343.0
+Game: - 0512     Teams: 3160 vs 3179
+Game: - 0512     Teams: 3160 vs 3179  --> Winner  3179.0
+Game: - 0413     Teams: 3243 vs 3339
+Game: - 0413     Teams: 3243 vs 3339  --> Winner  3243.0
+Game: - 0611     Teams: 3257 vs 3292
+Game: - 0611     Teams: 3257 vs 3292  --> Winner  3292.0
+Game: - 0314     Teams: 3261 vs 3349
+Game: - 0314     Teams: 3261 vs 3349  --> Winner  3261.0
+Game: - 0710     Teams: 3166 vs 3424
+Game: - 0710     Teams: 3166 vs 3424  --> Winner  3424.0
+Game: - 0215     Teams: 3417 vs 3465
+Game: - 0215     Teams: 3417 vs 3465  --> Winner  3417.0
+Game: - 0116     Teams: 3425 vs 3394
+Game: - 0116     Teams: 3425 vs 3394  --> Winner  3425.0
+Game: - 0809     Teams: 3242 vs 3276
+Game: - 0809     Teams: 3242 vs 3276  --> Winner  3276.0
+Game: - 0512     Teams: 3124 vs 3162
+Game: - 0512     Teams: 3124 vs 3162  --> Winner  3162.0
+Game: - 0413     Teams: 3439 vs 3267
+Game: - 0413     Teams: 3439 vs 3267  --> Winner  3439.0
+Game: - 0611     Teams: 3393 vs 3112
+Game: - 0611     Teams: 3393 vs 3112  --> Winner  3393.0
+Game: - 0314     Teams: 3163 vs 3238
+Game: - 0314     Teams: 3163 vs 3238  --> Winner  3163.0
+Game: - 0710     Teams: 3181 vs 3350
+Game: - 0710     Teams: 3181 vs 3350  --> Winner  3181.0
+Game: - 0215     Teams: 3326 vs 3263
+Game: - 0215     Teams: 3326 vs 3263  --> Winner  3326.0
+Game: - 0116_0809     Teams: 3376.0 vs 3277.0
+Game: - 0116_0809     Teams: 3376.0 vs 3277.0  --> Winner  3376.0
+Game: - 0512_0413     Teams: 3195.0 vs 3193.0
+Game: - 0512_0413     Teams: 3195.0 vs 3193.0  --> Winner  3193.0
+Game: - 0611_0314     Teams: 3401.0 vs 3333.0
+Game: - 0611_0314     Teams: 3401.0 vs 3333.0  --> Winner  3333.0
+Game: - 0710_0215     Teams: 3266.0 vs 3323.0
+Game: - 0710_0215     Teams: 3266.0 vs 3323.0  --> Winner  3266.0
+Game: - 0116_0809     Teams: 3400.0 vs 3199.0
+Game: - 0116_0809     Teams: 3400.0 vs 3199.0  --> Winner  3400.0
+Game: - 0512_0413     Teams: 3355.0 vs 3211.0
+Game: - 0512_0413     Teams: 3355.0 vs 3211.0  --> Winner  3211.0
+Game: - 0611_0314     Teams: 3453.0 vs 3151.0
+Game: - 0611_0314     Teams: 3453.0 vs 3151.0  --> Winner  3453.0
+Game: - 0710_0215     Teams: 3268.0 vs 3390.0
+Game: - 0710_0215     Teams: 3268.0 vs 3390.0  --> Winner  3390.0
+Game: - 0116_0809     Teams: 3234.0 vs 3343.0
+Game: - 0116_0809     Teams: 3234.0 vs 3343.0  --> Winner  3343.0
+Game: - 0512_0413     Teams: 3179.0 vs 3243.0
+Game: - 0512_0413     Teams: 3179.0 vs 3243.0  --> Winner  3243.0
+Game: - 0611_0314     Teams: 3292.0 vs 3261.0
+Game: - 0611_0314     Teams: 3292.0 vs 3261.0  --> Winner  3261.0
+Game: - 0710_0215     Teams: 3424.0 vs 3417.0
+Game: - 0710_0215     Teams: 3424.0 vs 3417.0  --> Winner  3424.0
+Game: - 0116_0809     Teams: 3425.0 vs 3276.0
+Game: - 0116_0809     Teams: 3425.0 vs 3276.0  --> Winner  3425.0
+Game: - 0512_0413     Teams: 3162.0 vs 3439.0
+Game: - 0512_0413     Teams: 3162.0 vs 3439.0  --> Winner  3439.0
+Game: - 0611_0314     Teams: 3393.0 vs 3163.0
+Game: - 0611_0314     Teams: 3393.0 vs 3163.0  --> Winner  3163.0
+Game: - 0710_0215     Teams: 3181.0 vs 3326.0
+Game: - 0710_0215     Teams: 3181.0 vs 3326.0  --> Winner  3326.0
+Game: - 0116_0809_0512_0413     Teams: 3376.0 vs 3193.0
+Game: - 0116_0809_0512_0413     Teams: 3376.0 vs 3193.0  --> Winner  3376.0
+Game: - 0611_0314_0710_0215     Teams: 3333.0 vs 3266.0
+Game: - 0611_0314_0710_0215     Teams: 3333.0 vs 3266.0  --> Winner  3266.0
+Game: - 0116_0809_0512_0413     Teams: 3400.0 vs 3211.0
+Game: - 0116_0809_0512_0413     Teams: 3400.0 vs 3211.0  --> Winner  3211.0
+Game: - 0611_0314_0710_0215     Teams: 3453.0 vs 3390.0
+Game: - 0611_0314_0710_0215     Teams: 3453.0 vs 3390.0  --> Winner  3453.0
+Game: - 0116_0809_0512_0413     Teams: 3343.0 vs 3243.0
+Game: - 0116_0809_0512_0413     Teams: 3343.0 vs 3243.0  --> Winner  3343.0
+Game: - 0611_0314_0710_0215     Teams: 3261.0 vs 3424.0
+Game: - 0611_0314_0710_0215     Teams: 3261.0 vs 3424.0  --> Winner  3424.0
+Game: - 0116_0809_0512_0413     Teams: 3425.0 vs 3439.0
+Game: - 0116_0809_0512_0413     Teams: 3425.0 vs 3439.0  --> Winner  3439.0
+Game: - 0611_0314_0710_0215     Teams: 3163.0 vs 3326.0
+Game: - 0611_0314_0710_0215     Teams: 3163.0 vs 3326.0  --> Winner  3326.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3376.0 vs 3266.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3376.0 vs 3266.0  --> Winner  3376.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3211.0 vs 3453.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3211.0 vs 3453.0  --> Winner  3211.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3343.0 vs 3424.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3343.0 vs 3424.0  --> Winner  3424.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3439.0 vs 3326.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3439.0 vs 3326.0  --> Winner  3439.0
+Index(['Conference', 'Game', 'TeamA', 'TeamB', 'Winner'], dtype='object')
+Index(['Conference', 'Game', 'TeamA', 'TeamB', 'Winner'], dtype='object')
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215_0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3376.0 vs 3211.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215_0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3424.0 vs 3439.0
+Game: - 0116_0809_0512_0413_0611_0314_0710_0215_0116_0809_0512_0413_0611_0314_0710_0215_0116_0809_0512_0413_0611_0314_0710_0215_0116_0809_0512_0413_0611_0314_0710_0215     Teams: 3376.0 vs 3424.0

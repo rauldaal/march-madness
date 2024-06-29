@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_score, recall_score, f1_score, roc_auc_score, log_loss, roc_curve
 
 from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
@@ -107,28 +108,30 @@ def create_comparision_graphic(results, type):
     for i, (model, values) in enumerate(results.items()):
         ConfusionMatrixDisplay(confusion_matrix=values[2][0][-1]).plot()
         plt.plot()
-        plt.savefig(f"plots/{type}/cm_{model}_train.png")
+        plt.savefig(f"plots/{type}/2024_cm_{model}_train.png")
         ConfusionMatrixDisplay(confusion_matrix=values[2][1][-1]).plot()
         plt.plot()
-        plt.savefig(f"plots/{type}/cm_{model}_test.png")
+        plt.savefig(f"plots/{type}/2024_cm_{model}_test.png")
     plt.close('all')
     return
 
 
-def train(train_df: pd.DataFrame, test_df: pd.DataFrame, type:str, best_model=None):
+def train(train_df: pd.DataFrame, test_df: pd.DataFrame, type: str, best_model=None):
     modelos = [
         # ('SVC', SVC()),
         ('XGBoost', XGBClassifier),
         ('RandomForest', RandomForestClassifier),
         ('LogisticRegression', LogisticRegression),
-        ('GradientBoosting', GradientBoostingClassifier)
+        ('GradientBoosting', GradientBoostingClassifier),
+        ('GaussianNB', GaussianNB)
     ]
     hiperparametros = [
         # {'C': [0.1, 1, 10, 100], 'kernel': ['linear', 'rbf']},
         {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 0.2, 0.3]},
         {'n_estimators': [10, 50, 100, 200], 'max_features': ['sqrt', 'log2']},
         {'C': [0.1, 1, 10, 100, 1_000, 10_000, 100_000], 'penalty': ['l1', 'l2'], "max_iter": [100, 1_000, 10_000], "n_jobs": [-1]},
-        {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 0.2, 0.3]}
+        {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 0.2, 0.3]},
+        {'var_smoothing': [1e-10, 1e-9, 1e-8, 1e-5, 1e-3]}
     ]
 
     result = {}
@@ -182,12 +185,12 @@ def train_test(train_df: pd.DataFrame, test_df: pd.DataFrame):
     cm = confusion_matrix(y_true=y_train, y_pred=y_train_pred)
     ConfusionMatrixDisplay(confusion_matrix=cm).plot()
     plt.plot()
-    plt.savefig("plots/cm_train.png")
+    plt.savefig("plots/2024_cm_train.png")
 
     cm = confusion_matrix(y_true=y_test, y_pred=y_pred)
     ConfusionMatrixDisplay(confusion_matrix=cm).plot()
     plt.plot()
-    plt.savefig("plots/cm_test.png")
+    plt.savefig("plots/2024_cm_test.png")
 
     accuracy = accuracy_score(y_pred=y_pred, y_true=y_test)
     print(f"Accuracy Score Test: {accuracy}")

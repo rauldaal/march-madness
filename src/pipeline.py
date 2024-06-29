@@ -6,6 +6,7 @@ from data_preparation import prepare_regular_season_csv, prepare_test_data
 from train import train_test, train
 from predict import predict
 
+
 def pipeline(config):
     if config.get("male").get("active"):
         if config.get("male", None).get("ingestion").get("active"):
@@ -17,6 +18,13 @@ def pipeline(config):
         test_df = prepare_test_data(config.get("male").get("testData"), train_df=df)
         # train_test(train_df=df, test_df=test_df)
         model = train(train_df=df, test_df=test_df, best_model=config.get("male").get("model"), type="male")
+        predict(
+            seed_file=config.get("seedFile"),
+            teams_name=config.get("male").get("teamsName"),
+            season_data=df,
+            model=model,
+            type="male"
+        )
 
     if config.get("female").get("active"):
         if config.get("female", None).get("ingestion").get("active"):
@@ -35,8 +43,6 @@ def pipeline(config):
             model=model,
             type="female"
         )
-
-
 
 
 if __name__ == "__main__":
