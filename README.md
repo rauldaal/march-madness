@@ -1,5 +1,9 @@
 # march-madness
+Here's my favorite video embedded for your viewing pleasure:
 
+```html
+<iframe width="560" height="315" src="[https://www.youtube.com/embed/idAvoUGiTKc?si=qODAPSuKC-uSy5dd](https://www.youtube.com/embed/idAvoUGiTKc?si=qODAPSuKC-uSy5dd)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
 ## Data Explanation
 
 ### 2024_tourney_seeds.csv
